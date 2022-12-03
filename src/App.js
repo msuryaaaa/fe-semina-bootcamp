@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import HomePage from './pages/Home';
+import CategoriesPage from './pages/Categories';
+import CategoriesCreatePage from './pages/Categories/create';
+import CategoriesEditPage from './pages/Categories/edit';
+import TalentsPage from './pages/Talents';
+import TalentsCreatePage from './pages/Talents/create';
+import TalentsEditPage from './pages/Talents/edit';
+import SNavbar from './components/NavBar';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<BrowserRouter>
+			<SNavbar />
+			<Routes>
+				<Route path='' element={<HomePage />} />
+				<Route path='categories' element={<CategoriesPage />} />
+				<Route path='categories/create' element={<CategoriesCreatePage />} />
+				<Route path='categories/edit/:id' element={<CategoriesEditPage />} />
+				<Route path='talents' element={<TalentsPage />} />
+				<Route path='talents/create' element={<TalentsCreatePage />} />
+				<Route path='talents/edit/:id' element={<TalentsEditPage />} />
+			</Routes>
+		</BrowserRouter>
+	);
 }
 
 export default App;
