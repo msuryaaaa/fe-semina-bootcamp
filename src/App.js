@@ -8,6 +8,8 @@ import TalentsCreatePage from './pages/Talents/create';
 import TalentsEditPage from './pages/Talents/edit';
 import EventsPage from './pages/Events';
 import EventsCreatePage from './pages/Events/create';
+import EventsEditPage from './pages/Events/edit';
+import SigninPage from './pages/Signin';
 import SNavbar from './components/NavBar';
 
 function App() {
@@ -16,6 +18,7 @@ function App() {
 			<SNavbar />
 			<Routes>
 				<Route path='' element={<HomePage />} />
+				<Route path='signin' element={<SigninPage />} />
 				<Route path='categories' element={<CategoriesPage />} />
 				<Route path='categories/create' element={<CategoriesCreatePage />} />
 				<Route path='categories/edit/:id' element={<CategoriesEditPage />} />
@@ -24,6 +27,7 @@ function App() {
 				<Route path='talents/edit/:id' element={<TalentsEditPage />} />
 				<Route path='events' element={<EventsPage />} />
 				<Route path='events/create' element={<EventsCreatePage />} />
+				<Route path='events/edit/:id' element={<EventsEditPage />} />
 			</Routes>
 		</BrowserRouter>
 	);

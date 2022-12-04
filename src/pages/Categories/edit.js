@@ -26,6 +26,7 @@ export default function CategoriesEditPage() {
 
 	useEffect(() => {
 		getOneCategories(id);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	const handleChange = (e) => {

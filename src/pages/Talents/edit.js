@@ -38,6 +38,7 @@ function TalentsEditPage() {
 
 	useEffect(() => {
 		getOneTalents(id);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	const uploadImage = async (file) => {
